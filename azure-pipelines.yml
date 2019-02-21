@@ -11,7 +11,14 @@ pool:
 
 variables:
   imageName: 'rails-test:$(build.buildId)'
+  registryServerName: '$(registryName).azurecr.io'
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
+
+- script: docker login $(registryServerName) -u $(registryLogin) -p $(registryPassword)
+  displayName: 'docker login'
+
+- script: docker push $(registryServerName)/$(imageName)
+  displayName: 'docker push'

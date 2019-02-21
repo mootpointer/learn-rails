@@ -20,5 +20,5 @@ steps:
 - script: docker login $(registryServerName) -u $(registryLogin) -p $(registryPassword)
   displayName: 'docker login'
 
-- script: docker push $(registryServerName)/$(imageName)
+- script: docker push $(imageName)
   displayName: 'docker push'

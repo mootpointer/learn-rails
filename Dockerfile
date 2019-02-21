@@ -6,5 +6,5 @@ COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
 RUN gem install bundler:2.0.1
 RUN bundle install
-EXPOSE 3000
-CMD ["rails", "s", "-b", "0.0.0.0" ]
+EXPOSE 80
+CMD ["rails", "s", "-p", "80", "-b", "0.0.0.0" ]

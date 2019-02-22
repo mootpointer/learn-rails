@@ -12,3 +12,4 @@ RUN gem install bundler:2.0.1
 RUN bundle install --deployment --without development test
 RUN apk del --purge build
 EXPOSE 80
+CMD ["rails", "s", "-p", "80", "-b", "0.0.0.0", "-e", "production"]

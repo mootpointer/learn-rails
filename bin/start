@@ -1,5 +1,5 @@
-#!/bin/bash -eu
-az login --identity
+#!/bin/bash -eux
+az login -i -u 1d52cdfa-7c08-49cb-a1b5-f2125f334093
 KEYS=$(az keyvault secret list --vault-name anharvey-docker-keyvault --query [].id -o tsv)
 
 for key in $KEYS;

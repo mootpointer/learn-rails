@@ -1,7 +1,7 @@
 FROM ruby:2.6-alpine
 RUN \
   apk update && \
-  apk add bash py-pip nodejs postgresql-libs && \
+  apk add bash py-pip nodejs postgresql-libs tzdata && \
   apk add --virtual=build gcc libffi-dev musl-dev openssl-dev python-dev postgresql-dev make && \
   pip --no-cache-dir install -U pip && \
   pip --no-cache-dir install azure-cli
